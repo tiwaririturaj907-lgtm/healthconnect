@@ -4,7 +4,7 @@
   left:50%;
   transform:translateX(-50%);
 
-  width:90%;
+  width: 90%;
   max-width:1200px;
 
   display:flex;
@@ -26,58 +26,107 @@
 html{
   scroll-behavior:smooth;
 }
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  list-style:none;
+  flex-wrap:nowrap;
+}
 
 .nav-links a{
   text-decoration:none;
   color:#334155;
   font-weight:500;
+  list-style: none;
 }
 
 .nav-links a:hover{
   color:#06B6D4;
-}
-.hamburger{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-}
-
-@media(max-width:768px){
-
-  .hamburger{
-    display:block;
-  }
-
-  .nav-links{
-    position:absolute;
-    top:80px;
-    left:0;
-
-    width:100%;
-
-    background:white;
-
-    flex-direction:column;
-    align-items:center;
-
-    gap:20px;
-
-    padding:25px;
-
-    display:none;
-
-    border-radius:20px;
-  }
-
-  .nav-links.active{
-    display:flex;
-  }
+  transition:right .35s ease;
 }
 .logo{
   font-size:24px;
   font-weight:700;
-  color:#0F172A;
 }
+.hamburger{
+  display:none;
+  font-size:32px;
+  cursor:pointer;
+  z-index:1001;
+}
+
+@media (max-width:768px){
+  .navbar{
+  width:100%;
+  border-radius: 0;
+  padding: 15px 20px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+  .hamburger{
+  display:flex;
+  font-size:28px;
+  background:white;
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  }
+
+  .menu-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    z-index:999;
+  }
+
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    max-width:300px;
+    height:100vh;
+    list-style:none;
+    background:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+
+    padding:90px 30px;
+    gap:25px;
+
+    transition:right .35s ease;
+    z-index:1000;
+
+    box-shadow:
+    -10px 0 30px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .nav-links li{
+    width:100%;
+    list-style:none;
+  }
+
+  .nav-links a{
+    font-size:18px;
+    width:100%;
+    display:block;
+  }
+}
+
 
 .nav-links{
   display:flex;
@@ -176,21 +225,40 @@ body{
 @media (max-width: 768px){
 
   .hero{
-    flex-direction:column;
-    padding:120px 20px 40px;
-    text-align:center;
+    padding:100px 15px 30px;
+    min-height:auto;
+  }
+
+  .hero img{
+    width:100%;
+    max-width:280px;
+    margin:auto;
+  }
+
+
+  .left h1{
+    font-size:34px;
+    line-height:1.2;
+  }
+
+  .left p{
+    font-size:15px;
+    margin-top:10px;
+  }
+
+  .right{
+    margin-top:25px;
+    gap:12px;
+  }
+
+  .card{
+    padding:14px;
+    border-radius:14px;
+    font-size:14px;
   }
 
   .left{
     width:100%;
-  }
-
-  .left h1{
-    font-size:42px;
-  }
-
-  .left p{
-    font-size:16px;
   }
 
   .buttons{
@@ -204,14 +272,6 @@ body{
     width:100%;
   }
 
-  .right{
-    margin-top:40px;
-    width:100%;
-  }
-
-  .card{
-    width:100%;
-  }
 }
 .services{
   padding:100px 8%;
@@ -280,15 +340,46 @@ body{
 }
 @media(max-width:768px){
 
-  .service-grid{
-    grid-template-columns:1fr;
-  }
-
   .services h2{
     font-size:34px;
   }
 
+  .service-card img{
+    width:60px;
+    height:60px;
+  }
+
+  .services{
+    padding:50px 15px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .service-card{
+    padding:16px;
+    min-height:auto;
+    border-radius:16px;
+  }
+
+  .service-card h3{
+    font-size:18px;
+    margin:8px 0;
+  }
+
+  .service-card p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .icon{
+  font-size:32px;
+  }
+
 }
+
 .stats{
   padding:80px 8%;
   display:grid;
@@ -417,6 +508,18 @@ body{
 
   .hospitals h2{
     font-size:34px;
+  }
+
+  .hospital-card{
+    padding:18px;
+  }
+
+  .hospital-card h3{
+    font-size:22px;
+  }
+
+  .hospital-card p{
+    font-size:14px;
   }
 
 }
@@ -622,6 +725,25 @@ body{
 
   .doctors h2{
     font-size:34px;
+  }
+
+  .doctor-card{
+    width:100%;
+    padding:18px;
+  }
+
+  .doctor-card img{
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+  .doctor-card h3{
+    font-size:22px;
+  }
+
+  .doctor-card p{
+    font-size:14px;
   }
 
 }
