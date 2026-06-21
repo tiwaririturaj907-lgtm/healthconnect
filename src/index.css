@@ -228,23 +228,52 @@ body{
 }
 @media (max-width: 768px){
   .hero{
-  flex-direction:column;
-  padding:120px 20px 40px;
-  overflow:hidden;
-}
+    padding:90px 20px 40px;
+    min-height:auto;
+    flex-direction:column;
+    text-align:center;
+    gap:25px;
+  }
 
-.left{
-  width:100%;
-}
+  .left{
+    width:100%;
+  }
 
-.right{
-  width:100%;
-  margin-top:30px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+  .left h1{
+    font-size:42px;
+    line-height:1.05;
+  }
 
+  .left p{
+    font-size:18px;
+    line-height:1.6;
+    margin-top:15px;
+  }
+
+  .buttons{
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .primary,
+  .secondary{
+    width:100%;
+  }
+
+  .right{
+    width:100%;
+    margin-top:10px;
+  }
+
+  .right img{
+    width:100%;
+    max-width:320px;
+    margin:auto;
+    display:block;
+    border-radius:20px;
+  }
 .hero-doctor{
   width:100%;
   max-width:320px;
@@ -255,36 +284,10 @@ body{
   width:100%;
   max-width:320px;
   padding:16px;
-  font-size:15px;
+  font: size 14px;
+  border-radius: 14px;
 }
-
-  .left h1{
-    font-size:34px;
-    line-height:1.2;
-  }
-
-  .left p{
-    font-size:15px;
-    margin-top:10px;
-  }
-
-  .card{
-    padding:14px;
-    border-radius:14px;
-    font-size:14px;
-  }
-
-  .buttons{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .primary,
-  .secondary{
-    width:100%;
-  }
-
+  
 }
 .services{
   padding:100px 8%;
@@ -731,34 +734,36 @@ body{
   color:#64748B;
 }
 @media(max-width:768px){
-
   .doctor-grid{
-    grid-template-columns:1fr;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .doctor-card{
+    padding:10px;
+  }
+
+  .doctor-card img{
+    height:120px;
+  }
+
+  .doctor-card h3{
+    font-size:14px;
+  }
+
+  .doctor-card p{
+    font-size:12px;
+  }
+
+  .doctor-card button{
+    font-size:12px;
+    padding:8px;
   }
 
   .doctors h2{
     font-size:34px;
   }
-
-  .doctor-card{
-    width:100%;
-    padding:18px;
-  }
-
-  .doctor-card img{
-  height:180px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-  .doctor-card h3{
-    font-size:22px;
-  }
-
-  .doctor-card p{
-    font-size:14px;
-  }
-
 }
 .nav-links li{
   position:relative;
