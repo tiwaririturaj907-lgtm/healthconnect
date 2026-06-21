@@ -59,13 +59,26 @@ html{
 @media (max-width:768px){
   .navbar{
   width:100%;
-  border-radius: 0;
-  padding: 15px 20px;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
+  max-width:none;
+  left:0;
+  transform:none;
 
+  position:fixed;
+  top:0;
+
+  border-radius:0;
+  padding:15px 20px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+  .logo{
+    display:block !important;
+    font-size:20px;
+    font-weight:700;
+    color:#0F172A;
+  }
   .hamburger{
   display:flex;
   font-size:28px;
@@ -85,32 +98,30 @@ html{
     background:rgba(0,0,0,0.4);
     z-index:999;
   }
-
   .nav-links{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:75%;
-    max-width:300px;
-    height:100vh;
-    list-style:none;
-    background:white;
+  position:fixed;
+  top:0;
+  right:-320px;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:flex-start;
+  width:280px;
+  height:100vh;
 
-    padding:90px 30px;
-    gap:25px;
+  background:#fff;
+  list-style:none;
 
-    transition:right .35s ease;
-    z-index:1000;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
 
-    box-shadow:
-    -10px 0 30px rgba(0,0,0,0.1);
-  }
+  padding:90px 25px;
 
+  gap:20px;
+
+  transition:right .3s ease;
+
+  z-index:1001;
+}
   .nav-links.active{
     right:0;
   }
@@ -125,13 +136,6 @@ html{
     width:100%;
     display:block;
   }
-}
-
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  list-style:none;
 }
 
 .nav-links li{
@@ -223,18 +227,36 @@ body{
   font-size:20px;
 }
 @media (max-width: 768px){
-
   .hero{
-    padding:100px 15px 30px;
-    min-height:auto;
-  }
+  flex-direction:column;
+  padding:120px 20px 40px;
+  overflow:hidden;
+}
 
-  .hero img{
-    width:100%;
-    max-width:280px;
-    margin:auto;
-  }
+.left{
+  width:100%;
+}
 
+.right{
+  width:100%;
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.hero-doctor{
+  width:100%;
+  max-width:320px;
+  height:auto;
+}
+
+.card{
+  width:100%;
+  max-width:320px;
+  padding:16px;
+  font-size:15px;
+}
 
   .left h1{
     font-size:34px;
@@ -246,19 +268,10 @@ body{
     margin-top:10px;
   }
 
-  .right{
-    margin-top:25px;
-    gap:12px;
-  }
-
   .card{
     padding:14px;
     border-radius:14px;
     font-size:14px;
-  }
-
-  .left{
-    width:100%;
   }
 
   .buttons{
@@ -800,11 +813,7 @@ body{
   color:white;
   cursor:pointer;
 }
-.footer{
-  background:#0F172A;
-  color:white;
-  padding:60px 8% 30px;
-}
+
 
 .footer-container{
   display:grid;
@@ -1158,12 +1167,10 @@ input[type="file"]{
   transform:translateY(-8px);
 }
 .hero-doctor{
-  width:410px;
-  height:260px;
-  object-fit:cover;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
-  transition:.3s;
+  width:100%;
+  max-width:500px;
+  height:auto;
+  display:block;
 }
 
 .hero-doctor:hover{
