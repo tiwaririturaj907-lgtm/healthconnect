@@ -742,18 +742,25 @@ body{
 
   .doctor-card{
     padding:10px;
+    border-radius: 18px;
   }
 
   .doctor-card img{
-    height:120px;
+    height:110px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .doctor-card h3{
     font-size:14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   .doctor-card p{
     font-size:12px;
+    margin: 0;
   }
 
   .doctor-card button{
@@ -763,6 +770,11 @@ body{
 
   .doctors h2{
     font-size:34px;
+  }
+  .rating,
+  .experience,
+  .doctor-card button{
+    display: none;
   }
 }
 .nav-links li{
